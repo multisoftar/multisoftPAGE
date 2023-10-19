@@ -1,0 +1,71 @@
+<header>
+    <div class="main-header-area main-header-02 main-header-06 header-06-bg pt-20 pb-10">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-6">
+                    <div class="logo">
+                        <a class="logo-img" [routerLink]="['./']"><img src="assets/multi/img/logo/header_logo_06.png"
+                                alt=""></a>
+                        <a class="logo-img sticky-logo d-none" [routerLink]="['./']"><img
+                                src="assets/multi/img/logo/header_logo_one.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xxl-8 col-xl-7 col-lg-7 d-none d-lg-block">
+                    <div class="main-menu main-menu-02 main-menu-06 d-none d-lg-block text-lg-end ml-45">
+                        <nav>
+                            <ul>
+                                <li><a class="active" [routerLink]="['./solutions']">Soluciones <i class="far fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a [routerLink]="['./solutions']">Soluciones</a></li>
+                                      
+                                    </ul>
+                                </li>
+                                <li><a>Industrias <i class="far fa-chevron-down" ></i></a>
+                                    <ul class="submenu" >
+                                        <li><a *ngFor="let category of categories; let i = index " (click)="setPreview(i)" style="cursor: pointer;">{{category.name}}</a></li>
+                                       
+                                    </ul>
+                                </li>
+                               
+                              <li>
+                                    <a >Nosotros <i class="far fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a [routerLink]="['./about']">Sobre nosotros</a></li>
+                                        <li><a [routerLink]="['./client']">Clientes</a></li>
+                                        <li><a [routerLink]="['./contact']">Contacto</a></li>
+                                    </ul>
+                                </li>
+                                <li><a >Utilidades <i class="far fa-chevron-down"></i></a>
+                                    <ul class="submenu">
+                                        <li><a [routerLink]="['./capacity']">Capacitación</a></li>
+                                        <li><a >Cuenta corriente On-line</a></li>
+                                        <li><a [routerLink]="['./downloads']">Descargas</a></li>
+                                        <li><a [routerLink]="['./']">Noticias</a></li>
+                                    </ul>
+                                </li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-6 col-6 text-xxl-start text-end">
+                    <ul class="right-nav">
+                        <li>
+                            <div class="hamburger-menu d-md-block d-lg-none">
+                                <a href="javascript:void(0);">
+                                    <i class="far fa-bars"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="d-none d-lg-inline-block">
+                            <a [routerLink]="['./contact']" class="theme_btn theme_btn_bg white_btn">Solicitar demo <i
+                                    class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

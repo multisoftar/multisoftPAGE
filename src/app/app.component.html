@@ -1,0 +1,52 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<aside class="slide-bar">
+    <div class="close-mobile-menu">
+        <a href="javascript:void(0);"><i class="fas fa-times"></i></a>
+    </div>
+
+    <!-- side-mobile-menu start -->
+    <nav class="side-mobile-menu">
+        <ul id="mobile-menu-active">
+            <li class="has-dropdown">
+                <a [routerLink]="['./solutions']">Soluciones</a>
+                <!-- <ul class="sub-menu">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul> -->
+            </li>
+         
+           <li class="has-dropdown">
+                <a >Rubros</a>
+                <!-- <ul class="submenu">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul> -->
+            </li>
+            <li class="has-dropdown">
+                <a >Nosotros</a>
+                <ul class="sub-menu">
+                    <li><a [routerLink]="['./about']">Sobre nosotros</a></li>
+                    <li><a [routerLink]="['./client']">Clientes</a></li>
+                    <li><a [routerLink]="['./contact']">Contacto</a></li>
+                </ul>
+            </li>
+            <li class="has-dropdown">
+                <a >Utilidades</a>
+
+                <ul class="submenu">
+                    <li><a [routerLink]="['./capacity']">Capacitación</a></li>
+                    <li><a >Cuenta corriente On-line</a></li>
+                    <li><a [routerLink]="['./downloads']">Descargas</a></li>
+                    <li><a >Noticias</a></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </nav>
+    <!-- side-mobile-menu end -->
+</aside>
+
+<app-footer></app-footer>

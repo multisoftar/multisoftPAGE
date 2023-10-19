@@ -1,0 +1,30 @@
+.fixed-size-image {
+    width: 100%;
+    height: 200px;
+  
+  }
+
+  .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    left: 2px;
+    right: auto;
+    --swiper-theme-color: #3a5baf;
+    --swiper-navigation-color: #3a5baf;
+  }
+
+  .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: 2px;
+    left: auto;
+    --swiper-theme-color: #3a5baf;
+    --swiper-navigation-color: #3a5baf;
+}
+.fixed-size-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed-size-image{
+    width: 150px;
+    height: 150px;}
+}

@@ -1,0 +1,461 @@
+
+<div class="body-overlay"></div>
+<main>
+    <!--hero-area start-->
+    <div class="hero-area hero-area-02 hero-area-06 pos-rel">
+        <div class="hero_right_img wow zoomIn animated d-none d-lg-block" data-wow-delay="0.9s">
+            <img class="img-fluid" src="assets/multi/img/slider/slider6.png" alt="">
+        </div>
+        <img class="shape-one" src="assets/multi/img/shape/16.png" alt="">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xxl-5 col-xl-5 col-lg-10">
+                    <div class="hero__content hero__content__02 hero__content__06 text-left">
+                        
+                        <h2 class="main-title mb-20 wow fadeInUp2 animated" data-wow-delay=".2s">Multisoft
+                            <br>Software pre y post venta </h2>
+                        <p class="wow fadeInUp2 animated" data-wow-delay=".4s">Soluciones en software para su negocios <span>ERP / CRM</span></p>
+                        <ul class="btn-list mt-35 wow fadeInUp2 animated" data-wow-delay=".6s">
+                                <li><a class="theme_btn theme_btn_bg" [routerLink]="['/solutions']">Ver productos<i
+                                            class="fas fa-chevron-right"></i></a>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--hero-area end-->
+    <!--sliders clients start-->
+    <section class="brand-area grey-bg pt-100 pb-85" >
+        <div class="container">
+            <div class="row brand-active" >
+                <swiper [config]="config2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide col-xl-2" *ngFor="let client of yeoman.allclient;let i = index">
+                            <div class="slide_img">
+                                <img src="{{client.images[0]}}" alt="clientes de Multisoft®" *ngIf="client.images[0]!==undefined"  class="fixed-size-image">
+                            </div>
+                        </div>
+                    </div>
+                </swiper>               
+            </div>
+        </div>
+    </section>
+    <!--sliders clients end-->
+    <!--Services start-->
+    <section class="services-area-5 service-padding pt-125 pb-65">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-7 col-xl-6 col-lg-10 wow fadeInUp2 animated" data-wow-delay="0.2s">
+                    <div class="section-title red-title text-center pr-50 pl-50 mb-75">
+                        <h5>Que hacemos en MultiSoft®</h5>
+                        <h3>Simplifiquemos la gestión de su empresa con nuestras soluciones</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-around" data-wow-delay='.5s'>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-60 wow fadeInUp2 animated"
+                    data-wow-delay="0.3s">
+                    <div class="services">
+                        <div class="services__icon ml-50 mr-30">
+                            <img src="assets/multi/img/icon/01.png" alt="desarrollo">
+                        </div>
+                        <div class="services__text">
+                            <h4>Desarrollo de software</h4>
+                            <p>Evaluamos minuciosamente las necesidades de nuestros clientes para ofrecer soluciones que optimicen su funcionamiento operativo y estratégico.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-60 wow fadeInUp2 animated"
+                    data-wow-delay="0.4s">
+                    <div class="services">
+                        <div class="services__icon ml-50 mr-30">
+                            <img src="assets/multi/img/icon/1.png" alt="instalacion">
+                        </div>
+                        <div class="services__text">
+                            <h4>Instalación de sistemas</h4>
+                            <p>La correcta instalación y configuración inicial de un sistema informático es un factor clave para lograr una exitosa incorporación del software a la dinámica operativa de una organización</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-60 wow fadeInUp2 animated"
+                    data-wow-delay="0.5s">
+                    <div class="services">
+                        <div class="services__icon ml-50 mr-30">
+                            <img src="assets/multi/img/icon/2.png" alt="implementación">
+                        </div>
+                        <div class="services__text">
+                            <h4>Implementación</h4>
+                            <p>Durante el período de incorporación del sistema  a una organización, ecfectuamos un cuidadoso monitoreo de todos los aspectos claves para maximizar el éxito de la inversión realizada por el cliente.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-60 wow fadeInUp2 animated"
+                    data-wow-delay="0.6s">
+                    <div class="services">
+                        <div class="services__icon ml-50 mr-30">
+                            <img src="assets/multi/img/icon/3.png" alt="soportetecnico">
+                        </div>
+                        <div class="services__text">
+                            <h4>Servicio técnico</h4>
+                            <p>Atendemos: 
+                                <li> - Atención de consultas telefónicas Help-Desk.</li>
+                                <li> - Resolución on-line de consultas, a través de correo electrónico. </li>
+                                <li> - Monitoreo a través de diversas tecnologías de acceso remoto. </li>
+                                <li> - Atención de emergencias en on-site  (en empresas). </li>
+                                <li> - Actualización de versiones. </li>
+                                    </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 mb-60 wow fadeInUp2 animated"
+                    data-wow-delay="0.7s">
+                    <div class="services">
+                        <div class="services__icon ml-50 mr-30">
+                            <img src="assets/multi/img/icon/4.png" alt="soportecoorporativo">
+                        </div>
+                        <div class="services__text">
+                            <h4>Soporte coorporativo</h4>
+                            <p>Este apoyo permite a los usuarios de soluciones informáticas Multisoft® dar un importante paso en materia de prevención al contar con un selecto grupo de analistas que ofrecen el mantenimiento de sus sistemas administrativos. Una solución permanente en el tiempo, con gran capacidad de respuesta y satisfacción del usuario al más alto nivel.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    <!--services end-->
+ 
+    <!--Products slider start-->
+    <section class="testimonial-area-03 testimonial-h4 pos-rel theme-bg4 pt-125 pb-120"
+            data-background="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 wow fadeInUp2" data-wow-delay="0.2s">
+                        <div class="section-title text-center white-title pr-20 pl-20 mb-80">
+                            <h5>Nuestros productos - MultiSoft®</h5>
+                        <h3 style="color:#fff;">Ofrecemos herramientas tecnológicas potentes, flexibles, ágiles y confiables.</h3>
+                    
+                        </div>
+                    </div>
+                </div>
+            
+                <div class=" testimonial-active-07  wow " data-wow-delay="0.4s" >
+                    
+                     
+                    <div class=" testimonial-item testimonial-item-h4"  >
+                        <swiper [config]="config1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide text_inner_02 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
+                                    <p></p>
+                                    <div class="testimonial-author d-flex align-items-center mt-20">
+                                        <div class="testimonial-author__img author-testi mr-20">
+                                            <img src="assets/multi/img/favicon.png" alt="">
+                                        </div>
+                                        <div class="testimonial-author__content about-testi">
+                                            <h4>{{product.name}}</h4>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                
+                            </div>
+                        </swiper>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                   
+                
+                </div>
+            </div>
+    </section>
+    <!--Products end-->
+    <!--why choose us start-->
+    <section class="what-do-area-03 what-do-area-05 pt-100 pb-120" >
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xxl-8 col-xl-8 col-lg-8 mb-30 wow fadeInLeft animated" data-wow-delay="0.2s">
+                    <div class="why-chose-img mr-85">
+                        <img class="img-fluid" src="assets/multi/img/bg/wc-06.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 wow fadeInRight animated" data-wow-delay="0.2s">
+                    <div class="we_wrapper_03 mb-30">
+                        <div class="section-title orenge-title text-left mb-25">
+                            <h5>¿Por qué elegir MultiSoft®?</h5>
+                            <h3 class="mb-30">Ofrecemos soluciones adecuadas según la industria de su empresa</h3>
+                            
+                        </div>
+                        <ul class="features_list features_list_02 features_list_05 mb-40">
+                            <li>Panel profesional</li>
+                            <li>Fácil de personalizar y actualizar</li>
+                            <li>Software ERP a su medida</li>
+                        </ul>
+                        <a class="theme_btn  theme_btn_bg"  [routerLink]="['/industries']">Ver Industrias aplicadas<i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-100 w-pt">
+                <div class="col-xxl-5 col-xl-5 col-lg-4 wow fadeInUp2 animated" data-wow-delay="0.2s">
+                    <div class="we_wrapper_03 w-pt mt-50 mb-30">
+                        <div class="section-title orenge-title text-left mb-25">
+                            <h5>Preguntas frecuentes</h5>
+                            <h2 class="mb-30">Acerca de Multisoft© y nuestros productos</h2>
+                            <p>¿Tenés dudas? Mirá acá abajo, respondemos a todo lo que nos suelen preguntar.</p>
+                        </div>
+                        <a class="theme_btn  theme_btn_bg"  [routerLink]="['/contact']">Mandanos un mensaje<i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-8 wow fadeInUp2 animated" data-wow-delay="0.2s">
+                    <div class="question-wrapper">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button acc-btn" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        Como solicito un producto ?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        textos textos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Comose que producto se adapta mejor a mis necesidades ?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        textos textos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        Como se maneja el servicio de soporte ?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        textos textos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseFour">
+                                        LOs productos tienen alguna garantia?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        textos textos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        Como se que debo renovar mi licencia ?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        textos textos
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!--why choose us end-->
+   <!--Banner start-->
+    <section class="dashbord-area black-bg4 pt-90 pb-120">
+        <div class="container">
+            <div class="row g-0 align-items-center">
+                <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-12">
+                    <div class="dashbord-wrapper mb-30">
+                        <div class="section-title mb-35 wow fadeInUp2 animated" data-wow-delay="0.3s">
+                            <div class="white-title">
+                                <h5>Uso y personalización a tu medida</h5>
+                                <h2 class="mb-30">Optimizamos constantemente el uso de nuestro ERP/CRM</h2>
+                            </div>
+                            <p>El software como servicio que estabas búscando</p>
+                        </div>
+                        <a class="theme_btn theme_btn_bg wow fadeInUp2 animated" data-wow-delay="0.3s"
+                        [routerLink]="['/contact']">¡Conseguí el tuyo con anticipación! <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-xxl-7 offset-xxl-1 col-xl-6 col-lg-6 col-md-12">
+                    <div class="dashbord-img mb-30 wow fadeInRight animated" data-wow-delay="0.3s">
+                        <img class="img-fluid" src="assets/multi/img/bg/09.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Banner end-->
+    <!--testimonial-area start-->
+    <section class="testimonial-area-02 testimonial-area-06 pos-rel grey-bg pt-125 pb-130">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 wow fadeInUp2 animated"
+                    data-wow-delay='.3s'>
+                    <div class="section-title text-center pr-20 pl-20 mb-90">
+                        <h5>Opiniones de nuestros clientes
+                          </h5>
+                        <h2>2356+ clientes opinan sobre nuestra asistencia</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xxl-8 col-md-10 wow fadeInUp2 animated" data-wow-delay='.4s'>
+                    <div class="row testimonial-active-05">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <swiper [config]="config">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide col-xxl-4 col-md-10 testimonial-item" *ngFor="let testimony of yeoman.alltestimony;let i = index">
+                                    <div class="text_inner text_inner_02 pos-rel white-bg">
+                                        <div class="testimonial-author d-flex align-items-center mb-30">
+                                            <div class="testimonial-author__img mr-20">
+                                                <img class="fixed-size-image" src="{{testimony.images[0]}}" alt="clientes de Multisoft®" *ngIf="testimony.images[0]!==undefined"  class="fixed-size-image">
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="testimonial-author__content">
+                                            <h4>{{testimony.name}}</h4>
+                                            <span>{{testimony.company}}</span>
+                                        </div>
+                                        <p>{{testimony.detail}}</p>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </swiper>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--testimonial-area end-->
+
+    <section class="blog-area grey-bg pt-130 pb-85">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 wow fadeInUp2" data-wow-delay='.2s'>
+                    <div class="section-title orenge-title text-center pr-20 pl-20 mb-80">
+                        <h5>Ultimas noticias</h5>
+                        <h3>Multisoft al dia</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                    <div class="kblog mb-35">
+                        <div class="kblog__img mb-25">
+                            <img class="img-fluid" src="assets/multi/img/blog/b-01.jpg" alt="">
+                        </div>
+                        <div class="kblog__content">
+                            <div class="bl-meta mb-10">
+                                <ul>
+                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
+                                    </li>
+                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
+                                </ul>
+                            </div>
+                            <a href="#">
+                                <h4>Designing Ethically Optimizing Videos
+                                    Shining Spotlight Smashing</h4>
+                            </a>
+                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
+                                accusantium doloremque laudantium</p>
+                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
+                                <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                    <div class="kblog mb-35">
+                        <div class="kblog__img mb-25">
+                            <img class="img-fluid" src="assets/multi/img/blog/b-02.jpg" alt="">
+                        </div>
+                        <div class="kblog__content">
+                            <div class="bl-meta mb-10">
+                                <ul>
+                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
+                                    </li>
+                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
+                                </ul>
+                            </div>
+                            <a href="#">
+                                <h4>Improving Your Team’s Communication In The Age Of Remote Work</h4>
+                            </a>
+                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
+                                accusantium doloremque laudantium</p>
+                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
+                                <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                    <div class="kblog mb-35">
+                        <div class="kblog__img mb-25">
+                            <img class="img-fluid" src="assets/multi/img/blog/b-03.jpg" alt="">
+                        </div>
+                        <div class="kblog__content">
+                            <div class="bl-meta mb-10">
+                                <ul>
+                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
+                                    </li>
+                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
+                                </ul>
+                            </div>
+                            <a href="#">
+                                <h4>Designing Better Tooltips For Mobile User Interfaces</h4>
+                            </a>
+                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
+                                accusantium doloremque laudantium</p>
+                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
+                                <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<!--footer-area start-->
