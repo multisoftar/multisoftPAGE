@@ -20,7 +20,7 @@ export const ScriptStore: Scripts[] = [
   {name: 'counterup', src: 'assets/multi/js/jquery.counterup.min.js'},
   {name: 'waypoints', src: 'assets/multi/js/waypoints.min.js'},
   {name: 'scrollUp', src: 'assets/multi/js/jquery.scrollUp.min.js'},
-  {name: 'images', src: 'assets/multi/js/imagesloaded.pkgd.min.js'},
+  {name: 'imageslo', src: 'assets/multi/js/imageslo.pkgd.min.js'},
   {name: 'magnific-popup', src: 'assets/multi/js/jquery.magnific-popup.min.js'},
   {name: 'easypiechart', src: 'assets/multi/js/jquery.easypiechart.js'},
   {name: 'tilt', src: 'assets/multi/js/tilt.jquery.js'},

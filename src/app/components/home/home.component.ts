@@ -4,7 +4,7 @@ import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
-
+import { Detail } from '@services/detail.service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,11 @@ export class HomeComponent implements AfterViewInit {
   categories:any;
   product:any;
   
+  info: { name: string; description: string; moduless: string; } = {
+    name: 'Nombre inicial',
+    description: 'Descripción inicial',
+    moduless: 'Módulos iniciales'
+  };
  
   config1: SwiperOptions = {
     a11y: { enabled: true },
@@ -29,6 +34,10 @@ export class HomeComponent implements AfterViewInit {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
+    },
+     autoplay: {
+      delay: 2000, 
+      disableOnInteraction: false, 
     },
   };
   config: SwiperOptions = {
@@ -73,16 +82,43 @@ export class HomeComponent implements AfterViewInit {
       }
     }
   };
+  config3: SwiperOptions = {
+    a11y: { enabled: true },
+    direction: 'horizontal',
+    slidesPerView: 6,
+    keyboard: true,
+    mousewheel: false,
+    scrollbar: false,
+    pagination: true,
+    spaceBetween: 5,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    autoplay: {
+      delay: 800, 
+      disableOnInteraction: false, 
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      }
+    }
+  };
   
   
 
   constructor(
+    public infoDetail: Detail,
     public router:Router,
     public script:ScriptService,
     public yeoman:Yeoman,
     public dataApiService: DataApiService
 
     ) {
+      // this.products=allProducts
+      // this.clients=allclient
+      // this.rubros=allrubro
       this.script.load(
         'modernizr',
         'jquery',
@@ -99,7 +135,7 @@ export class HomeComponent implements AfterViewInit {
         'counterup',
         'waypoints',
         'scrollUp',
-        'images',
+        'imageslo',
         'magnific-popup',
         'easypiechart',
         'tilt',
@@ -110,6 +146,7 @@ export class HomeComponent implements AfterViewInit {
     this.getAllProducts();
     this.getAlltest();
     this.getAllRubro();
+    this.getAllIntegration();
      }
      
     
@@ -134,6 +171,7 @@ export class HomeComponent implements AfterViewInit {
      
       });
     }
+    
     setCategory(i:any){
       let indice= i;
       this.dataApiService.getAllCategory().subscribe(
@@ -163,16 +201,22 @@ export class HomeComponent implements AfterViewInit {
     }
     
     setPreview(i:any){
-      this.yeoman.preview=this.yeoman.allProducts[i];
-      this.router.navigate(['solutionsdetail']);
-    }
+    this.info.name=this.yeoman.allProducts[i].name;
+    this.info.description=this.yeoman.allProducts[i].description;
+    this.info.moduless=this.yeoman.allProducts[i].moduless;
+    console.log("INFO: ",this.info);
+    this.infoDetail.info=this.info,
+    
+    // this.yeoman.preview=this.yeoman.allProducts[i];
+    this.router.navigate(['/solutionsdetail']);
+  }
 
     setRoute(par:any){
       let parametro=par;
       this.yeoman.virtualRoute=parametro;
     }
     view(id:any){
-      this.yeoman.preview=this.yeoman.products[id];
+      this.yeoman.preview=this.yeoman.allProducts[id];
       this.setRoute('solutions');
     }
     getAllRubro(){
@@ -184,7 +228,11 @@ export class HomeComponent implements AfterViewInit {
       });
     }
 
-    
+    getAllIntegration(){
+      this.dataApiService.getAllIntegration().subscribe(response=>{
+        this.yeoman.allintegration=response;
+      });
+    }
 
      ngAfterViewInit(): void {
     }

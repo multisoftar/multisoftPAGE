@@ -12,6 +12,7 @@ import { Butler } from '@services/butler.service';
 export class ClientComponent implements OnInit {
   clients:any;
   categories:any;
+  category: any= [];
    
    selectedCategory:any;
   constructor(
@@ -22,13 +23,13 @@ export class ClientComponent implements OnInit {
     this.getAll();
     this.loadCategories();
    }
-   setClient(i:any){
-    let indice= i;
-    this.dataApiService.getAllClient().subscribe(
-     response => {
-       this.clients = response;}
-     )
-   }
+    setClient(i:any){
+     let indice= i;
+     this.dataApiService.getAllClient().subscribe(
+      response => {
+        this.clients = response;}
+      )
+    }
    getAll(){
  
     this.dataApiService.getAllClient().subscribe(response=> {
@@ -36,35 +37,39 @@ export class ClientComponent implements OnInit {
    
     });
   }
-  // setCategory(i:any){
-  //   let indice= i;
-  //   this.dataApiService.getAllCategory().subscribe(
-  //    response => {
-  //      this.categories = response;}
-  //    )
-  //  }
- 
-   loadCategories(){
+  /*  setCategory(i:any){
+     let indice= i;
      this.dataApiService.getAllCategory().subscribe(
-       response => {
-         this.categories = response;
-         console.log("Categorías cargadas:", this.categories);
-       },
-       error => {
-         console.error("Error al cargar las categorías:", error);
-       }
-     );
-   }
+      response => {
+        this.categories = response;}
+      )
+    } */
+ 
+      loadCategories() {
+      this.dataApiService.getAllCategory().subscribe(
+        (response: any) => { // Asegúrate de que response sea del tipo correcto
+          this.categories = response;
+    
+          // Ordena las categorías por la propiedad 'name'
+          this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
+    
+          console.log("Categorías cargadas y ordenadas:", this.categories);
+        },
+        error => {
+          console.error("Error al cargar las categorías:", error);
+        }
+      );
+    }
 
   setCategory(category: any) {
-  let id = category.idCategory;
+     console.log("category : "+JSON.stringify(category));
+category=JSON.stringify(category.id);
+    let id = category
+  this.yeoman.filtered=true;
   console.log("category recibida: "+id)
   for (let i = 0; i < this.categories.length; i++) {
     if (this.categories[i].idCategory === id) {
-      this.yeoman.categorySelected = this.categories[i].idCategory;
-      // console.log("id Category: "+this.yeoman.categorySelected);
-      // this.yeoman.virtualRoute = "shop";
-      // this.showCategoryDropdown = false;
+      this.yeoman.categorySelected = this.categories[i];
       break; // Terminamos el bucle ya que hemos encontrado el objeto
     }
   }

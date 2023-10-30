@@ -18,12 +18,12 @@
             </li>
          
            <li class="has-dropdown">
-                <a >Rubros</a>
-                <!-- <ul class="submenu">
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                </ul> -->
+            <a >Rubros</a>
+            <ul class="sub-menu">
+                <li> <a *ngFor="let category of categories; let i = index " (click)="setPreview(i)" style="cursor: pointer;">{{category.name}}</a>
+                </li>
+            </ul>
+                                       
             </li>
             <li class="has-dropdown">
                 <a >Nosotros</a>

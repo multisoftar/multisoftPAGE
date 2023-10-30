@@ -89,7 +89,7 @@
                         </div>
                         <div class="services__text">
                             <h4>Implementación</h4>
-                            <p>Durante el período de incorporación del sistema  a una organización, ecfectuamos un cuidadoso monitoreo de todos los aspectos claves para maximizar el éxito de la inversión realizada por el cliente.</p>
+                            <p>Durante el período de incorporación del sistema  a una organización, efectuamos un cuidadoso monitoreo de todos los aspectos claves para maximizar el éxito de la inversión realizada por el cliente.</p>
                             
                         </div>
                     </div>
@@ -144,35 +144,32 @@
                     
                         </div>
                     </div>
-                </div>
+                
             
-                <div class=" testimonial-active-07  wow " data-wow-delay="0.4s" >
-                    
-                     
-                    <div class=" testimonial-item testimonial-item-h4"  >
-                        <swiper [config]="config1">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide text_inner_02 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
-                                    <p></p>
-                                    <div class="testimonial-author d-flex align-items-center mt-20">
-                                        <div class="testimonial-author__img author-testi mr-20">
-                                            <img src="assets/multi/img/favicon.png" alt="">
-                                        </div>
-                                        <div class="testimonial-author__content about-testi">
-                                            <h4>{{product.name}}</h4>
-                                           
+                    <div class="col-12 testimonial-active-07" data-wow-delay="0.2s">
+                        
+                        <div class=" testimonial-item-1 testimonial-item-h4"  >
+                            <swiper [config]="config1">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide text_inner__content-4 pos-rel white-bg" *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">
+                                       
+                                        <div class="testimonial-author  ">
+                                            <div class="testimonial-author__img author-testi mr-20">
+                                                <img src="assets/multi/img/favicon.png" alt="">
+                                            </div> 
+                                            <div class="testimonial-author__content about-testi">
+                                               
+                                               <h4>{{product.name}}</h4>
+                                               
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                           
-                                
-                            </div>
-                        </swiper>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                            </swiper>
+                        </div>
                     </div>
-                   
-                
                 </div>
             </div>
     </section>
@@ -198,7 +195,7 @@
                             <li>Fácil de personalizar y actualizar</li>
                             <li>Software ERP a su medida</li>
                         </ul>
-                        <a class="theme_btn  theme_btn_bg"  [routerLink]="['/industries']">Ver Industrias aplicadas<i
+                        <a class="theme_btn  theme_btn_bg"  [routerLink]="['/solutions']">Ver Industrias aplicadas<i
                                 class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
@@ -309,9 +306,9 @@
                         <div class="section-title mb-35 wow fadeInUp2 animated" data-wow-delay="0.3s">
                             <div class="white-title">
                                 <h5>Uso y personalización a tu medida</h5>
-                                <h2 class="mb-30">Optimizamos constantemente el uso de nuestro ERP/CRM</h2>
+                                <h2 class="mb-30">Integraciones personalizadas para maximizar la utilidad de tu ERP/CRM</h2>
                             </div>
-                            <p>El software como servicio que estabas búscando</p>
+                            <p>Tu solución de software como servicio perfectamente adaptada a tus necesidades</p>
                         </div>
                         <a class="theme_btn theme_btn_bg wow fadeInUp2 animated" data-wow-delay="0.3s"
                         [routerLink]="['/contact']">¡Conseguí el tuyo con anticipación! <i class="fas fa-chevron-right"></i></a>
@@ -322,6 +319,25 @@
                         <img class="img-fluid" src="assets/multi/img/bg/09.png" alt="">
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="section-title text-center white-title pr-20 pl-20 mb-80">
+                    <h2 class="mb-30">Todas las integraciones</h2>
+                </div>
+            </div>
+            <div class="row brand-active" >
+                <swiper [config]="config3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide col-xl-2" *ngFor="let integration of yeoman.allintegration;let i = index">
+                            <div class="slide_img">
+                                <img src="{{integration.images[0]}}" alt="integraciones de Multisoft®" *ngIf="integration.images[0]!==undefined"  class="fixed-size-image-2">
+                            </div>
+                        </div>
+                    </div>
+                </swiper>               
             </div>
         </div>
     </section>
@@ -350,7 +366,7 @@
                                     <div class="text_inner text_inner_02 pos-rel white-bg">
                                         <div class="testimonial-author d-flex align-items-center mb-30">
                                             <div class="testimonial-author__img mr-20">
-                                                <img class="fixed-size-image" src="{{testimony.images[0]}}" alt="clientes de Multisoft®" *ngIf="testimony.images[0]!==undefined"  class="fixed-size-image">
+                                                <img class="fixed-size-image1" src="{{testimony.images[0]}}" alt="clientes de Multisoft®" *ngIf="testimony.images[0]!==undefined"  class="fixed-size-image1">
                                             </div>
                                            
                                         </div>
@@ -372,7 +388,7 @@
     </section>
     <!--testimonial-area end-->
 
-    <section class="blog-area grey-bg pt-130 pb-85">
+    <!-- <section class="blog-area grey-bg pt-130 pb-85">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 wow fadeInUp2" data-wow-delay='.2s'>
@@ -393,7 +409,6 @@
                                 <ul>
                                     <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
                                     </li>
-                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
                                 </ul>
                             </div>
                             <a href="#">
@@ -417,7 +432,6 @@
                                 <ul>
                                     <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
                                     </li>
-                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
                                 </ul>
                             </div>
                             <a href="#">
@@ -440,7 +454,6 @@
                                 <ul>
                                     <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
                                     </li>
-                                    <!-- <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li> -->
                                 </ul>
                             </div>
                             <a href="#">
@@ -455,7 +468,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 </main>
 <!--footer-area start-->

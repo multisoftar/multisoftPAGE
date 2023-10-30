@@ -5,33 +5,25 @@
                 <div class="kw-portfolio-style">
                   <ul class="nav nav-tabs kw-spc kw-nav-style">
                     <li class="nav-item" *ngFor="let category of categories; let i = index">
-                      <button class="nav-link" (click)="setCategory(category)" [ngClass]="{'active': category === selectedCategory}" style="cursor:pointer">{{category.name}}</button>
+                      <button class="nav-link" [ngClass]="{'active': category === selectedCategory}" style="cursor:pointer" (click)="setCategory(category)" > {{category.name}}</button>
                     </li>
                   </ul>
                 </div>
-
             </div>
         </div>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="all-project" role="tabpanel"  >
+        <div class="tab-content">
+            <div class="tab-pane fade show active">
                 <div class="row">
-                    <div class=" col-lg-3 col-md-6" *ngFor="let client of yeoman.allclient;let i = index" [hidden]="yeoman.categorySelected!=client.id && yeoman.categorySelected!='first'">
+                    <div class=" col-lg-3 col-md-6" *ngFor="let client of yeoman.allclient;let i = index" [hidden]="yeoman.categorySelected.id!=client.idCategory &&   yeoman.filtered  ">
                         <div class="kw-single-portfolio box-shadow mb-30">
-                            <div class="kw-portfolio-thumb">
+                            <div class="kw-portfolio-thumb" style="text-align: center;">
                                 <img src="{{client.images[0]}}" alt="clientes de Multisoft®" *ngIf="client.images[0]!==undefined"  class="fixed-size-image">
                                 <h3>{{client.name}}</h3>
-                              
                             </div>
-                          
                         </div>
                     </div>
-                    
-                   
-                   
                 </div>
             </div>
-          
         </div>
-
     </div>
 </section>

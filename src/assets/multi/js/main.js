@@ -131,12 +131,12 @@
   });
 
   // popup-img
-  $(".popup-img").magnificPopup({
+ /*  $(".popup-img").magnificPopup({
     type: "image",
     gallery: {
       enabled: true,
     },
-  });
+  }); */
 
   // mainSlider
   function mainSlider() {
@@ -420,7 +420,7 @@
   });
 
   //   testimonial-active-07
-  $(".testimonial-active-07").owlCarousel({
+ /*  $(".testimonial-active-07").owlCarousel({
     loop: true,
     margin: 30,
     items: 3,
@@ -447,7 +447,7 @@
         items: 3,
       },
     },
-  });
+  }); */
 
   //tbrand-active
   $(".brand-active").slick({
@@ -539,7 +539,7 @@
   });
 
   // owlCarousel
-  $(".owlcarousel").owlCarousel({
+  /* $(".owlcarousel").owlCarousel({
     loop: true,
     margin: 0,
     items: 2,
@@ -560,24 +560,24 @@
         items: 2,
       },
     },
-  });
+  }); */
 
   // //aos
   // AOS.init();
   // window.addEventListener('load', AOS.refresh);
 
   /* magnificPopup img view */
-  $(".popup-image").magnificPopup({
+ /*  $(".popup-image").magnificPopup({
     type: "image",
     gallery: {
       enabled: true,
     },
-  });
+  }); */
 
   /* magnificPopup video view */
-  $(".popup-video").magnificPopup({
+  /* $(".popup-video").magnificPopup({
     type: "iframe",
-  });
+  }); */
 
   // isotop
   $(".grid").imagesloaded(function () {
@@ -651,7 +651,7 @@
   });
 
   //nice-select
-  $("select").niceSelect();
+ /*  $("select").niceSelect();
 
   jQuery(function (dnxte_contenttoggle) {
     dnxte_contenttoggle(".dnxte-toggle-btn .dnxte-input").each(function () {
@@ -666,5 +666,5 @@
           this.checked ? (e.hide(), n.show()) : (n.hide(), e.show());
         });
     });
-  });
+  }); */
 })(jQuery);

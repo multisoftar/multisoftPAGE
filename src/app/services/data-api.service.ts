@@ -148,6 +148,10 @@ export class DataApiService {
 		const url_api = 	this.yeoman.origin.restUrl+'/api/rubros';
 		return this.http.get(url_api);
 	}
+	getAllIntegration(){
+		const url_api = 	this.yeoman.origin.restUrl+'/api/integrations';
+		return this.http.get(url_api);
+	}
 	getAllCars(){
 		const url_api = 	this.yeoman.origin.restUrl+'/api/cars';
 		return this.http.get(url_api);
@@ -219,6 +223,13 @@ export class DataApiService {
 	rubroUpdate(part :ClientInterface, id: string){
 		// let token = this.authService.getToken();
 		const url_api=	this.yeoman.origin.restUrl+`/api/rubros/${id}`;
+		return this.http
+		.put<ClientInterface>(url_api, part)
+		.pipe(map(data => data));
+	}
+	integrationUpdate(part :ClientInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=	this.yeoman.origin.restUrl+`/api/integrations/${id}`;
 		return this.http
 		.put<ClientInterface>(url_api, part)
 		.pipe(map(data => data));
@@ -307,6 +318,12 @@ export class DataApiService {
 	}
 	saveRubro(client :ClientInterface){
 		const url_api=	this.yeoman.origin.restUrl+'/api/rubros';
+		return this.http
+		.post<ClientInterface>(url_api, client)
+		.pipe(map(data => data));
+	}
+	saveIntegration(client :ClientInterface){
+		const url_api=	this.yeoman.origin.restUrl+'/api/integrations';
 		return this.http
 		.post<ClientInterface>(url_api, client)
 		.pipe(map(data => data));

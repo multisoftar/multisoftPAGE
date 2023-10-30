@@ -17,8 +17,9 @@ import { DataApiService } from '@app/services/data-api.service';
     HttpClientModule,
     ReactiveFormsModule
   ],
+  exports:[],
   providers:[
-    Yeoman,DataApiService
+    Yeoman,DataApiService,
   ]
 })
 export class SolutionsModule { }
