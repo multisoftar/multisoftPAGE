@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Butler } from '@services/butler.service';
+import { categoryFilter } from '@app/services/categoryFilter.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class ClientComponent implements OnInit {
    
    selectedCategory:any;
   constructor(
+    public categoryFilter: categoryFilter,
     public yeoman: Yeoman,
     public dataApiService: DataApiService,
     public _butler:Butler
@@ -30,12 +32,17 @@ export class ClientComponent implements OnInit {
         this.clients = response;}
       )
     }
-   getAll(){
- 
+   getAll(){ 
     this.dataApiService.getAllClient().subscribe(response=> {
       this.yeoman.allclient=response;
-   
+      console.log(this.yeoman.allclient);
+      this.yeoman.allclient = this.yeoman.allclient.map((client:any) => {
+        // Agregar "c" a la propiedad 'id' de cada objeto
+        client.idNew = 'c' + client.idCategory;
+        return client;
+      });
     });
+   
   }
   /*  setCategory(i:any){
      let indice= i;
@@ -61,18 +68,11 @@ export class ClientComponent implements OnInit {
       );
     }
 
-  setCategory(category: any) {
-     console.log("category : "+JSON.stringify(category));
-category=JSON.stringify(category.id);
-    let id = category
-  this.yeoman.filtered=true;
-  console.log("category recibida: "+id)
-  for (let i = 0; i < this.categories.length; i++) {
-    if (this.categories[i].idCategory === id) {
-      this.yeoman.categorySelected = this.categories[i];
-      break; // Terminamos el bucle ya que hemos encontrado el objeto
-    }
-  }
+  setCategory(i: any) {
+    this.categoryFilter.categorySelected.id="c"+this.categories[i].id;
+    console.log("selected", this.categoryFilter.categorySelected);
+    console.log("comparando ["+JSON.stringify(this.categoryFilter.categorySelected)+"" )
+    this.categoryFilter.filtered=true;
 }
 
   ngOnInit(): void {

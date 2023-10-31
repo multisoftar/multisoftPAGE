@@ -3,6 +3,7 @@ import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Router } from '@angular/router';
 import { Detail } from '@services/detail.service';
+import { Filter } from '@app/services/filters.service';
 @Component({
   selector: 'app-solutionsdetail',
   templateUrl: './solutionsdetail.component.html',
@@ -14,6 +15,7 @@ export class SolutionsdetailComponent implements OnInit {
   product:any={};
   localDetail:any=[];
   constructor(
+    public filter: Filter,
     public infoDetail: Detail,
     public yeoman: Yeoman,
     public dataApiService: DataApiService,

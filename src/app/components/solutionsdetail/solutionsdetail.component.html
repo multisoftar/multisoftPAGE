@@ -2,16 +2,16 @@
         <!-- services-area start -->
         <section class="services-area pt-130 pb-100">
             <div class="container">
-                <div class="row">
+                <div class="row" *ngIf="filter.module">
                      <div class="col-xl-8 col-lg-7">
                         <div class="services-details-main-content">
                             <div class="services-details-thumb mb-50">
                                 <img src="assets/multi/img/services/service-details-thumb-1.jpg" alt="">
                             </div>
                           
-                                <h3 class="services-details-content-title">{{localDetail.info.name}}</h3>
-                                <p class="services-details-content-info">{{localDetail.info.description}}</p>
-                                <p class="services-details-content-desc mb-20">{{localDetail.info.moduless}}</p>
+                                <h3 class="services-details-content-title">{{filter.module.name}}</h3>
+                                <!-- <p class="services-details-content-info">{{filter.module.description}}</p>
+                                <p class="services-details-content-desc mb-20">{{filter.module.moduless}}</p> -->
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-5">
