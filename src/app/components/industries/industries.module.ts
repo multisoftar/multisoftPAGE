@@ -5,6 +5,8 @@ import { IndustriesRoutingModule } from './industries-routing.module';
 import { IndustriesComponent } from './industries.component';
 import { DataApiService } from '@app/services/data-api.service';
 import { Yeoman } from '@app/services/yeoman.service';
+import { NgxMultiselectModule } from '@ngx-lib/multiselect';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { Yeoman } from '@app/services/yeoman.service';
     IndustriesComponent
   ],
   imports: [
+    FormsModule,
+    NgxMultiselectModule,
     CommonModule,
     IndustriesRoutingModule
   ],

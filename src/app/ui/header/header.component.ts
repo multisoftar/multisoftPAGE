@@ -13,11 +13,7 @@ import { Filter } from '@app/services/filters.service';
 export class HeaderComponent implements OnInit {
   allProducts:any;
   categories:any;
-  info: { name: string; description: string; moduless: string; } = {
-    name: 'Nombre inicial',
-    description: 'Descripción inicial',
-    moduless: 'Módulos iniciales'
-  };
+  idCategoryFiltered:string="";
   constructor(
     public filter:Filter,
     public infoDetail: Detail,
@@ -34,17 +30,7 @@ export class HeaderComponent implements OnInit {
          this.categories = response;}
        )
      }   
-    /*  loadCategories(){
-       this.dataApiService.getAllCategory().subscribe(
-         response => {
-           this.categories = response;
-           console.log("Categorías cargadas:", this.categories);
-         },
-         error => {
-           console.error("Error al cargar las categorías:", error);
-         }
-       );
-     } */
+ 
      loadCategories() {
       this.dataApiService.getAllCategory().subscribe(
         (response: any) => { // Asegúrate de que response sea del tipo correcto
@@ -62,28 +48,11 @@ export class HeaderComponent implements OnInit {
     }
     
   setPreview(i: any) {
-    this.yeoman.preview = this.yeoman.allrubro[i];
-    this.info = this.yeoman.allrubro[i];
-    this.infoDetail.info = this.info,
+    this.filter.idCategorySelected = this.categories[i].id;
+    console.log("id enviado: ", this.filter.idCategorySelected)
       this.router.navigate(['industries']);
   }
-  setModuleFilter(category:any) {
-
- console.log("category wow:"+JSON.stringify(category))
- let idCompare="c"+category.id;
-    if(category!==undefined && category.id){
-      
-      for (let i = 0; i < this.yeoman.allrubro.length; i++) {
-        
-        let toCompare = "c" + this.yeoman.allrubro[i].id;
-        if (toCompare == idCompare){
-          this.filter.module = this.yeoman.allrubro[i];
-      }
-    }
-    }
-    console.log("comparado: ["+JSON.stringify(category)+"] con ["+JSON.stringify(this.filter.module));
-   
-  }
+ 
 
 
     

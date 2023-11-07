@@ -73,7 +73,7 @@ export class AppComponent {
         // Ordena las categorías por la propiedad 'name'
         this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
   
-        console.log("Categorías cargadas y ordenadas:", this.categories);
+       
       },
       error => {
         console.error("Error al cargar las categorías:", error);

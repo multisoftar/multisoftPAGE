@@ -152,6 +152,10 @@ export class DataApiService {
 		const url_api = 	this.yeoman.origin.restUrl+'/api/integrations';
 		return this.http.get(url_api);
 	}
+	getAllModules(){
+		const url_api = 	this.yeoman.origin.restUrl+'/api/modules';
+		return this.http.get(url_api);
+	}
 	getAllCars(){
 		const url_api = 	this.yeoman.origin.restUrl+'/api/cars';
 		return this.http.get(url_api);
@@ -230,6 +234,13 @@ export class DataApiService {
 	integrationUpdate(part :ClientInterface, id: string){
 		// let token = this.authService.getToken();
 		const url_api=	this.yeoman.origin.restUrl+`/api/integrations/${id}`;
+		return this.http
+		.put<ClientInterface>(url_api, part)
+		.pipe(map(data => data));
+	}
+	modulesUpdate(part :ClientInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=	this.yeoman.origin.restUrl+`/api/modules/${id}`;
 		return this.http
 		.put<ClientInterface>(url_api, part)
 		.pipe(map(data => data));

@@ -10,3 +10,9 @@
         margin-bottom: 30px;
         padding-top: 20px;
 }
+
+img, svg {
+    vertical-align: middle;
+    max-width: 55%;
+}
+

@@ -21,7 +21,7 @@ export class SolutionsdetailComponent implements OnInit {
     public dataApiService: DataApiService,
     public router: Router
   ) {
-this.localDetail=this.infoDetail;
+    this.localDetail=this.infoDetail;
     this.product=this.product
     this.loadCategories();
     // console.log("seted: "+JSON.stringify(this.yeoman.preview.name));
@@ -51,6 +51,12 @@ this.localDetail=this.infoDetail;
       }
     );
   }
+  
+setPreview(i: any) {
+  this.filter.idCategorySelected = this.categories[i].id;
+  console.log("id enviado: ", this.filter.idCategorySelected)
+    this.router.navigate(['industries']);
+}
   
   ngOnInit(): void {
     

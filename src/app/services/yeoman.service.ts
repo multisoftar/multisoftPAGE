@@ -20,10 +20,12 @@ filtered=false;
   virtualRoute:any="dashboard";
   pop:Boolean=false;
   data:any={};
+  idCategoryFiltered:string="";
   products:any={};
   product:any={};
   categories:any=[];
   category:any={};
+  filteredModules:any=[]
   allcategory:any=[];
   integration:any={};
   allintegration:any=[];
@@ -34,6 +36,8 @@ filtered=false;
   alltestimony:any=[];
   rubro:any={};
   allrubro:any=[];
+  modules:any;
+  allModules:any;
   currency:number=1;
   config: {
     clientSelected:number;

@@ -184,7 +184,7 @@ export class HomeComponent implements AfterViewInit {
        this.dataApiService.getAllCategory().subscribe(
          response => {
            this.categories = response;
-           console.log("Categorías cargadas:", this.categories);
+          
          },
          error => {
            console.error("Error al cargar las categorías:", error);
@@ -203,8 +203,7 @@ export class HomeComponent implements AfterViewInit {
     setPreview(i:any){
     this.info.name=this.yeoman.allProducts[i].name;
     this.info.description=this.yeoman.allProducts[i].description;
-    this.info.moduless=this.yeoman.allProducts[i].moduless;
-    console.log("INFO: ",this.info);
+    this.info.moduless=this.yeoman.allProducts[i].moduless;   
     this.infoDetail.info=this.info,
     
     // this.yeoman.preview=this.yeoman.allProducts[i];
@@ -235,6 +234,7 @@ export class HomeComponent implements AfterViewInit {
     }
 
      ngAfterViewInit(): void {
+      window.scrollTo(0, 0);
     }
   
 
