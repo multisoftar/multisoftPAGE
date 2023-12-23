@@ -222,8 +222,6 @@ export class HomeComponent implements AfterViewInit {
     
       this.dataApiService.getAllRubro().subscribe(response=>{
         this.yeoman.allrubro=response;
-      
-        
       });
     }
 

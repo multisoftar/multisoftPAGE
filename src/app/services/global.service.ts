@@ -126,6 +126,7 @@ this.loadModules();
     this.filter.idCategorySelected = this.categories[i].id;
     console.log("id enviado: ", this.filter.idCategorySelected)
     this.loadModules();
+    this.router.navigate(['industries']);
 
 
   }
@@ -142,13 +143,14 @@ this.loadModules();
           for (const category of module.categories) {
             if (category.id === this.filter.idCategorySelected) {
               this.filteredModules.push(module);
-              /* break;  */
+               break;  
             }
           }
         }
         
        
-        this.router.navigate(['industries']);
+        
       });
+      
   }
 }
