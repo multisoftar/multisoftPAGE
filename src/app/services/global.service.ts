@@ -148,7 +148,7 @@ this.loadModules();
         }
         
        
-        this.router.navigate(['industries']);
+        this.router.navigate(['home']);
       });
   }
 }
