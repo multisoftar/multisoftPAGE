@@ -16,7 +16,7 @@
                             <ul>
                                 <li><a class="active" [routerLink]="['./solutions']">Soluciones <i class="far fa-chevron-down"></i></a>
                                     <ul class="submenu">
-                                        <li><a [routerLink]="['./solutions']">Soluciones</a></li>
+                                        <li><a *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">{{product.name}}</a></li>
                                       
                                     </ul>
                                 </li>
@@ -26,7 +26,6 @@
                                        
                                     </ul>
                                 </li>
-                                
                                
                               <li>
                                     <a >Nosotros <i class="far fa-chevron-down"></i></a>

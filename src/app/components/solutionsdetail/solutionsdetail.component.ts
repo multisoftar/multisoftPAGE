@@ -4,6 +4,7 @@ import { DataApiService } from '@app/services/data-api.service';
 import { Router } from '@angular/router';
 import { Detail } from '@services/detail.service';
 import { Filter } from '@app/services/filters.service';
+import { GlobalService } from '@app/services/global.service';
 @Component({
   selector: 'app-solutionsdetail',
   templateUrl: './solutionsdetail.component.html',
@@ -19,7 +20,8 @@ export class SolutionsdetailComponent implements OnInit {
     public infoDetail: Detail,
     public yeoman: Yeoman,
     public dataApiService: DataApiService,
-    public router: Router
+    public router: Router,
+    public global: GlobalService
   ) {
     this.localDetail=this.infoDetail;
     this.product=this.product

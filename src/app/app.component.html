@@ -10,11 +10,10 @@
         <ul id="mobile-menu-active">
             <li class="has-dropdown">
                 <a [routerLink]="['./solutions']">Soluciones</a>
-                <!-- <ul class="sub-menu">
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                </ul> -->
+                 <ul class="sub-menu">
+                    <li><a *ngFor="let product of yeoman.allProducts;let i = index"  (click)="setPreview(i)" style="cursor: pointer;">{{product.name}}</a></li>
+
+                </ul> 
             </li>
          
            <li class="has-dropdown">

@@ -19,9 +19,10 @@
                             <div class="single-services-widget mb-45">
                                 <h3 class="service-widget-title">Rubros </h3>
                                 <div class="services-widget-content">
-                                    <div class="services-widget-link" *ngFor="let category of categories; let i = index" (click)="setPreview(i)" style="cursor: pointer;">
+                                    <div class="services-widget-link" *ngFor="let category of global.categories; let i = index " (click)="global.setPreview(i)" style="cursor: pointer;">
+
                                         <ul class="services-widget-list">
-                                            <li><a >{{category.name}}</a></li>
+                                            <li><a >{{category.name}} ({{global.quantitiescategoriesSelected[i]}})</a></li>
                                           
                                         </ul>
                                     </div>
