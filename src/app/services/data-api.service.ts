@@ -145,7 +145,7 @@ export class DataApiService {
 		return this.http.get(url_api);
 	}
 	getAllRubro(){
-		const url_api = 	this.yeoman.origin.restUrl+'/api/rubros';
+		const url_api =this.yeoman.origin.restUrl+'/api/rubros';
 		return this.http.get(url_api);
 	}
 	getAllIntegration(){

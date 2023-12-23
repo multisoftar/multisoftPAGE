@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { DataApiService } from '@services/data-api.service';
+import { Filter } from '@services/filters.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,7 @@ filtered=false;
   preview:any={};
   user:any;
   all:any=[];
+  // categorySelected:any={};
   allProducts:any=[];
   existencias:any=[];
   existenciasSize:number=0;
@@ -51,5 +54,6 @@ filtered=false;
     restUrl: "https://db.buckapi.com:9023",
     GQLUrl: "<origin GQL url>",
   };
-  constructor() {}
+
+
 }

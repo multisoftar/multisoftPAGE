@@ -12,13 +12,14 @@
                     data-wow-delay=".2s">
                     <h2>Grandes pasos, grandes soluciones</h2>
                     <h5 style="padding-top: 20px;">Nuestro software cubre 20 rubros, pensando siempre en la facilidad para gestionar su empresa</h5>
+               <span *ngFor="let module of global.filteredModules;let i =index">{{module.namwe}} </span>
                 </div>
             </div>
           
         </div>
       
         <div class="row">
-            <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6" *ngFor="let module of yeoman.filteredModules">
+            <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6" *ngFor="let module of global.filteredModules">
                 <div class="no-active do_box-2 do-box-green  text-center mb-30 wow fadeInUp2  animated"
                     data-wow-delay=".4s" >
                     <div class="do__box-inner">

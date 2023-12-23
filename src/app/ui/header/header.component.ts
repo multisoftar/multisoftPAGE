@@ -4,6 +4,7 @@ import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
 import { Filter } from '@app/services/filters.service';
+import { GlobalService } from '@app/services/global.service';
 
 @Component({
   selector: 'app-header',
@@ -19,9 +20,10 @@ export class HeaderComponent implements OnInit {
     public infoDetail: Detail,
     public router: Router,
     public yeoman: Yeoman,
-    public dataApiService: DataApiService
+    public dataApiService: DataApiService,
+    public global: GlobalService
     ) { 
-      this.loadCategories();
+      this.global.loadCategories();
     }
     setCategory(i:any){
       let indice= i;
@@ -31,27 +33,9 @@ export class HeaderComponent implements OnInit {
        )
      }   
  
-     loadCategories() {
-      this.dataApiService.getAllCategory().subscribe(
-        (response: any) => { // Asegúrate de que response sea del tipo correcto
-          this.categories = response;
     
-          // Ordena las categorías por la propiedad 'name'
-          this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
     
-          console.log("Categorías cargadas y ordenadas:", this.categories);
-        },
-        error => {
-          console.error("Error al cargar las categorías:", error);
-        }
-      );
-    }
-    
-  setPreview(i: any) {
-    this.filter.idCategorySelected = this.categories[i].id;
-    console.log("id enviado: ", this.filter.idCategorySelected)
-      this.router.navigate(['industries']);
-  }
+ 
  
 
 

@@ -3,6 +3,7 @@ import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
 import { Filter } from '@app/services/filters.service';
+import { GlobalService } from '@app/services/global.service';
 
 @Component({
   selector: 'app-industries',
@@ -11,15 +12,16 @@ import { Filter } from '@app/services/filters.service';
 })
 export class IndustriesComponent implements OnInit ,AfterViewInit{
 
-  allModules: any = [];
+  // allModules: any = [];
 
   constructor(
     public filter: Filter,
     public infoDetail: Detail,
     public yeoman: Yeoman,
+    public global:GlobalService,
     public dataApiService: DataApiService
   ) {
-    this.getAllRubro();
+    // this.getAllRubro();
   }
   getAllRubro() {
     this.dataApiService.getAllRubro().subscribe(response => {
@@ -27,27 +29,10 @@ export class IndustriesComponent implements OnInit ,AfterViewInit{
     });
   }
 
-  loadModules() {
-    console.log("id a evaluar : " + this.filter.idCategorySelected)
-    this.dataApiService.getAllModules().subscribe(
-      (response: any) => {
-        this.yeoman.allModules = response;
-        const filteredModules = [];
-        for (const module of this.yeoman.allModules) {
-          for (const category of module.categories) {
-            if (category.id === this.filter.idCategorySelected) {
-              this.yeoman.filteredModules.push(module);
-              break; 
-            }
-          }
-        }
-      });
-  }
-
   ngAfterViewInit(): void {
 
-    console.log("lo que viene: ",this.filter.idCategorySelected)
-     this.loadModules();
+    // console.log("lo que viene: ",this.filter.idCategorySelected)
+    //  this.global.loadModules();
   }
   ngOnInit(): void {
     window.scrollTo(0, 0);
