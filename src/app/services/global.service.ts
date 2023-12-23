@@ -84,19 +84,24 @@ this.loadModules();
 
   }
   conteoRubros() {
-    let size = this.allModules.length;
+    let modulesSize = this.allModules.length;
     let rubrosSize = this.categories.length;
     let cont = 0;
+    let acum=0;
     for (let i = 0; i < rubrosSize; i++) {
-      cont = 0;
-      for (let j = 0; j < size; j++) {
-        let size3=this.allModules[j].categories.length;
-        for (let k=0;k>size3;k++){
-        if (this.categories[i].id === this.allModules[j].categories[k].idCategory)
-          cont = cont + 1;
-      }}
-      this.quantitiescategoriesSelected.push(cont);
-      cont = 0;
+     acum=0;
+      for (let j = 0; j < modulesSize; j++) {
+        let categoriesSize=this.allModules[j].categories.length;
+        for (let k=0;k<categoriesSize;k++){
+          console.log( "comparando : "+this.categories[i].id +" con: "+this.allModules[j].categories[k].id)
+        if (this.categories[i].id === this.allModules[j].categories[k].id)
+         { cont = cont + 1;}
+      }
+      acum=acum+cont;
+     
+    }
+    this.quantitiescategoriesSelected.push(acum);
+    acum=0;
     }
   };
 
@@ -105,7 +110,7 @@ this.loadModules();
     this.dataApiService.getAllCategory().subscribe(
       (response: any) => { // Asegúrate de que response sea del tipo correcto
         this.categories = response;
-  
+  this.conteoRubros();
         // Ordena las categorías por la propiedad 'name'
         this.categories.sort((a: any, b: any) => a.name.localeCompare(b.name));
        
@@ -131,7 +136,7 @@ this.loadModules();
       (response: any) => {
         
         this.allModules = response;
-        
+        this.conteoRubros();
         this.filteredModules = [];
         for (const module of this.allModules) {
           for (const category of module.categories) {
@@ -142,7 +147,7 @@ this.loadModules();
           }
         }
         
-        this.conteoRubros();
+       
         this.router.navigate(['industries']);
       });
   }
