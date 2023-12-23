@@ -142,13 +142,13 @@ this.loadModules();
           for (const category of module.categories) {
             if (category.id === this.filter.idCategorySelected) {
               this.filteredModules.push(module);
-              break; 
+              /* break;  */
             }
           }
         }
         
        
-        this.router.navigate(['home']);
+        this.router.navigate(['industries']);
       });
   }
 }

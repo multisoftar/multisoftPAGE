@@ -16,3 +16,11 @@ img, svg {
     max-width: 55%;
 }
 
+.do-box-green .do_box__icon {
+    height: 70px;
+    width: 70px;
+    line-height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-block;
+}
