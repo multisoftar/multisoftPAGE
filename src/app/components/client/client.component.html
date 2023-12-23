@@ -5,8 +5,13 @@
                 <div class="kw-portfolio-style">
                   <ul class="nav nav-tabs kw-spc kw-nav-style">
                     <li class="nav-item" *ngFor="let category of categories; let i = index">
-                      <button class="nav-link" [ngClass]="{'active': category === selectedCategory}" style="cursor:pointer" (click)="setCategory(i)" > {{category.name}}</button>
-                    </li>
+                        <button class="nav-link" [ngClass]="{'active': category === selectedCategory}" style="cursor:pointer" (click)="setCategory(i)" > {{category.name}}</button>
+                      </li>
+                      <li class="nav-item">
+                        <button class="nav-link" (click)="showAllCategories()">Ver Todos</button>
+                      </li>
+                      
+                    
                   </ul>
                 </div>
             </div>

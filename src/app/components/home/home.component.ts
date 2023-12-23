@@ -15,7 +15,7 @@ export class HomeComponent implements AfterViewInit {
   clients:any;
   categories:any;
   product:any;
-  
+  swiperOptins:any;
   info: { name: string; description: string; moduless: string; } = {
     name: 'Nombre inicial',
     description: 'Descripción inicial',
@@ -78,7 +78,7 @@ export class HomeComponent implements AfterViewInit {
     },
     breakpoints: {
       768: {
-        slidesPerView: 6
+        slidesPerView: 5
       }
     }
   };

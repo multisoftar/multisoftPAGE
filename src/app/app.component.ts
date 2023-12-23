@@ -5,6 +5,7 @@ import { Router} from '@angular/router';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
+import { GlobalService } from './services/global.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ export class AppComponent {
     public infoDetail: Detail,
     public router: Router,
     public yeoman: Yeoman,
-    public dataApiService: DataApiService
+    public dataApiService: DataApiService,
+    public global: GlobalService
   )
   {
     this.loadCategories();

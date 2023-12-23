@@ -63,7 +63,11 @@ export class ClientComponent implements OnInit {
    
     this.categoryFilter.filtered=true;
 }
-
+showAllCategories() {
+  // Reinicia el filtro para mostrar todas las categorías
+  this.categoryFilter.filtered = false;
+  this.categoryFilter.categorySelected.id = '';
+}
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }

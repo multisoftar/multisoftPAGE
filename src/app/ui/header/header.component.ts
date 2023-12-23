@@ -31,15 +31,7 @@ export class HeaderComponent implements OnInit {
        response => {
          this.categories = response;}
        )
-     }   
- 
-    
-    
- 
- 
-
-
-    
+     }       
   ngOnInit(): void {
     
   }

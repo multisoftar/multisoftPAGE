@@ -20,8 +20,10 @@
            <li class="has-dropdown">
             <a >Rubros</a>
             <ul class="sub-menu">
-                <li> <a *ngFor="let category of categories; let i = index " (click)="setPreview(i)" style="cursor: pointer;">{{category.name}}</a>
-                </li>
+                <!-- <li> <a *ngFor="let category of categories; let i = index " (click)="setPreview(i)" style="cursor: pointer;">{{category.name}}</a>
+                </li> -->
+                <li><a *ngFor="let category of global.categories; let i = index " (click)="global.setPreview(i)" style="cursor: pointer;">{{category.name}} ({{global.quantitiescategoriesSelected[i]}})</a></li>
+
             </ul>
                                        
             </li>
