@@ -39,6 +39,8 @@ integrationSelected: { name: string,  images: any[] } = { name: "Select one",  i
   info: any[] = [];
   rubroIndex:any;
   rubros: any[] = [];
+
+  posts: any[] = [];
   rubrosSelected: any[] = [];
   
   allModules:any=[];
@@ -81,7 +83,7 @@ integrationSelected: { name: string,  images: any[] } = { name: "Select one",  i
     public dataApiService: DataApiService
   ) {
 this.loadModules();
-
+this.loadPosts();
   }
   conteoRubros() {
     let modulesSize = this.allModules.length;
@@ -121,6 +123,22 @@ this.loadModules();
       }
     );
   }
+  loadPosts() {
+    this.dataApiService.getAllPosts().subscribe(
+      (response: any) => { // Asegúrate de que response sea del tipo correcto
+        this.posts = response;
+        
+        // Ordena las categorías por la propiedad 'name'
+        this.posts.sort((a: any, b: any) => a.name.localeCompare(b.name));
+
+        console.log("posts cargados y ordenados:", this.posts);
+      },
+      error => {
+        console.error("Error al cargar las categorías:", error);
+      }
+    );
+  }
+
   setPreview(i: any) {
     this.filter.categorySelected=this.categories[i];
     this.filter.idCategorySelected = this.categories[i].id;
