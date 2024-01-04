@@ -15,5 +15,8 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  view(post:any){
+    this.global.previewPost=post;
+    this.router.navigate(['blogDetail']);
+  }
 }

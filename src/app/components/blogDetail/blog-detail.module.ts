@@ -14,4 +14,9 @@ import { BlogDetailComponent } from './blog-detail.component';
     BlogDetailRoutingModule
   ]
 })
-export class BlogDetailModule { }
+export class BlogDetailModule {
+
+  
+
+
+ }

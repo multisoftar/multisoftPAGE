@@ -9,43 +9,35 @@
                     <div class="blog-strandard-content">
                         <div class="kblog mb-35">
                             <div class="kblog__img mb-35">
-                                <img class="img-fluid" src="assets/multi/img/blog/b-20.jpg" alt="">
+                                <img class="img-fluid" src="{{global.previewPost.img}}" alt="" style="max-width: 50%;">
                             </div>
                             <div class="kblog__content">
                                 <div class="bl-meta mb-10">
                                     <ul>
-                                        <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
+                                        <li><span><i class="fal fa-user-circle"></i>Por <span>{{global.previewPost.author}}</span></span>
                                         </li>
-                                        <li><span><i class="fal fa-calendar-alt"></i>25 Jan 2021</span></li>
+                                        <li><span><i class="fal fa-calendar-alt"></i>{{global.previewPost.createdAt|date}}</span></li>
                                     </ul>
                                 </div>
-                                <a href="about.html">
-                                    <h4>Designing Ethically Optimizing Videos And Shining Spotlight On Our
-                                        SmashingConf Speakers</h4>
+                                <a >
+                                    <h4>{{global.previewPost.title}}</h4>
                                 </a>
-                                <p class="pt-25 pb-15 pfont">Sed ut perspiciatis unde omnis iste natus error sit
-                                    voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-                                    ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                    explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                    fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                                    nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                    consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-                                    labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
-                                    quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                                    ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                                    voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-                                    fugiat quo voluptas
-                                    But I must explain to you how all this mistaken idea of denouncing pleasure and
-                                    praising pain was born and I will give you a complete account of the system, and
-                                    expound the actual teachings of the great explorer of the truth, the
-                                    master-builder of human happiness. No one rejects, dislikes, or avoids pleasure
-                                    itself, because it is pleasure, but because those who do not know how to pursue
-                                    pleasure rationally encounter consequences that are extremely painful. Nor again
-                                    is there anyone who loves or pursues or desires to obtain pain of itself,
-                                    because it is pain</p>
+                                <div *ngFor="let item of global.previewPost.body.ops">
+                                    <ng-container *ngIf="isString(item.insert)">
+                                      <!-- Si el insert es un string, renderizarlo directamente -->
+                                      <span [innerHTML]="item.insert"></span>
+                                    </ng-container>
+                                    <ng-container *ngIf="!isString(item.insert)">
+                                      <!-- Si el insert es un objeto, en este caso, un objeto con una propiedad image -->
+                                      <img *ngIf="item.insert.image" [src]="item.insert.image" alt="Embedded Image">
+                                    </ng-container>
+                                  </div>
+                                  
+
+                                <!-- <p class="pt-25 pb-15 pfont">{{global.previewPost.body}}</p> -->
                             </div>
                         </div>
-                        <div class="kblog mb-35">
+                        <!-- <div class="kblog mb-35">
                             <div class="kblog__img mb-35">
                                 <div class="row gx-xxl-3">
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
@@ -68,8 +60,8 @@
                                     Nor again is there anyone who loves or pursues or desires to obtain pain of
                                     itself, because it is pain</p>
                             </div>
-                        </div>
-                        <div class="quote-wrapper quote-wrapper-02 mb-40">
+                        </div> -->
+                        <!-- <div class="quote-wrapper quote-wrapper-02 mb-40">
                             <div class="quote-text">
                                 <h4>Smashing Podcast Episode With Stéphanie Walter How Can Work With UI Frameworks
                                 </h4>
@@ -81,18 +73,18 @@
                             <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-7 col-xs-12">
                                 <div class="blog-post-tag">
                                     <span>Tags : </span>
-                                    <a href="contact.html">Business Cart</a>
-                                    <a href="contact.html">Design</a>
-                                    <a href="contact.html">Branding</a>
+                                    <a >Business Cart</a>
+                                    <a >Design</a>
+                                    <a >Branding</a>
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-4 col-md-5 col-xs-12">
                                 <div class="blog-share-icon text-end">
                                     <span>Share :</span>
-                                    <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                                    <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                                    <a href="contact.html"><i class="fab fa-google"></i></a>
+                                    <a ><i class="fab fa-facebook-f"></i></a>
+                                    <a ><i class="fab fa-twitter"></i></a>
+                                    <a ><i class="fab fa-instagram"></i></a>
+                                    <a ><i class="fab fa-google"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -107,10 +99,10 @@
                                 <p>But must explain to you how all this mistake idea deounciasure and praising pain
                                     was born and will give you comete account the system </p>
                                 <div class="author-icon">
-                                    <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                                    <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                                    <a href="contact.html"><i class="fab fa-google"></i></a>
+                                    <a ><i class="fab fa-facebook-f"></i></a>
+                                    <a ><i class="fab fa-twitter"></i></a>
+                                    <a ><i class="fab fa-instagram"></i></a>
+                                    <a ><i class="fab fa-google"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +112,7 @@
                                 <div class="bakix-navigation text-left">
                                     <img src="assets/multi/img/blog/b-24.jpg" alt="">
                                     <div class="bakix-text">
-                                        <h4><a href="about.html">Mixing Tangible Intan
+                                        <h4><a >Mixing Tangible Intan
                                                 Interfaces Using</a></h4>
                                         <ul>
                                             <li><i class="fal fa-user"></i>Somlia</li>
@@ -132,7 +124,7 @@
                             <div class="col-xxl-5 col-xl-5 col-lg-12 col-md-12">
                                 <div class="bakix-navigation">
                                     <img src="assets/multi/img/blog/b-25.jpg" alt="">
-                                    <h4><a href="about.html">Mixing Tangible Intan
+                                    <h4><a >Mixing Tangible Intan
                                             Interfaces Adobe</a></h4>
                                     <ul>
                                         <li><i class="fal fa-user"></i>Somlia</li>
@@ -164,10 +156,10 @@
                                                     <h5>David Angel Makel</h5>
                                                     <span>IT Consultant</span>
                                                 </div>
-                                                <p>It is a long established fact that a reader will be distracted by
+                                                <p>It is a long established fact that a reader will be distracted Por
                                                     the readable content page looking at its layout point of using
                                                     autem vel eum iure reprehenderit qui in ea voluptate</p>
-                                                <a href="contact.html">Reply Comments <i
+                                                <a >Reply Comments <i
                                                         class="fal fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
@@ -185,7 +177,7 @@
                                                 <p>Established fact that a reader will be distracted by the readable
                                                     content page looking at its layout point of using autem vel eum
                                                     iure reprehenderit voluptate</p>
-                                                <a href="contact.html">Reply Comments <i
+                                                <a >Reply Comments <i
                                                         class="fal fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
@@ -203,7 +195,7 @@
                                                 <p>Established fact that a reader will be distracted by the readable
                                                     content page looking at its layout point of using autem vel eum
                                                     iure reprehenderit voluptate</p>
-                                                <a href="contact.html">Reply Comments <i
+                                                <a >Reply Comments <i
                                                         class="fal fa-long-arrow-right"></i></a>
                                             </div>
                                         </div>
@@ -239,14 +231,14 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="subs-btn subs-btn-2 f-btn mb-35">
-                                                <a class="theme_btn theme_btn_bg" href="contact.html">send message
+                                                <a class="theme_btn theme_btn_bg" >send message
                                                     <i class="fas fa-chevron-right"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div> -->
 
 
                     </div>
@@ -257,53 +249,20 @@
 
                     <div class="widget widget-02 mb-40">
                         <div class="widget-title-box mb-20">
-                            <h3 class="widget-title">Recent News</h3>
+                            <h3 class="widget-title">Publicaciones recientes</h3>
                         </div>
                         <ul class="recent-post">
-                            <li>
+                            <li *ngFor="let post of global.posts" (click)="view(post)">
                                 <div class="widget-post-img">
-                                    <img src="assets/multi/img/blog/b-10.jpg" alt="">
+                                    <img src="{{post.img}}" alt="" style="max-width: 150px;">
                                 </div>
                                 <div class="widget-post-body">
-                                    <h6 class="widget-post-title"><a href="about.html"> More Appointments Events
-                                            WordPress Booking</a></h6>
-                                    <div class="widget-post-meta"><i class="far fa-angle-right"></i>By Silva Hola
+                                    <h6 class="widget-post-title"><a > {{post.title}}</a></h6>
+                                    <div class="widget-post-meta"><i class="far fa-angle-right"></i>Por {{post.autor}}
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="widget-post-img">
-                                    <img src="assets/multi/img/blog/b-11.jpg" alt="">
-                                </div>
-                                <div class="widget-post-body">
-                                    <h6 class="widget-post-title"><a href="about.html"> Designing Better Tooltips
-                                            For Mobile User Interfaces</a></h6>
-                                    <div class="widget-post-meta"><i class="far fa-angle-right"></i>By Silva Hola
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="widget-post-img">
-                                    <img src="assets/multi/img/blog/b-12.jpg" alt="">
-                                </div>
-                                <div class="widget-post-body">
-                                    <h6 class="widget-post-title"><a href="about.html"> How To Port Your Web App To
-                                            Microsoft Teams</a></h6>
-                                    <div class="widget-post-meta"><i class="far fa-angle-right"></i>By Silva Hola
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="widget-post-img">
-                                    <img src="assets/multi/img/blog/b-13.jpg" alt="">
-                                </div>
-                                <div class="widget-post-body">
-                                    <h6 class="widget-post-title"><a href="about.html"> Getting Started With The
-                                            GetX Package Applications</a></h6>
-                                    <div class="widget-post-meta"><i class="far fa-angle-right"></i>By Silva Hola
-                                    </div>
-                                </div>
-                            </li>
+                         
                         </ul>
                     </div>
 
@@ -311,8 +270,6 @@
             </div>
         </div>
     </section>
-    <!-- blog-details-area-end -->
-
-
+ 
 
 </main>

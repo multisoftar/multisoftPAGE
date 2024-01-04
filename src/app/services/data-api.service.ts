@@ -146,7 +146,7 @@ export class DataApiService {
 	}
 
 	getAllPosts(){
-		const url_api =this.yeoman.origin.restUrl+'/api/blogs';
+		const url_api =this.yeoman.origin.restUrl+'/api/posts';
 		return this.http.get(url_api);
 	}
 
