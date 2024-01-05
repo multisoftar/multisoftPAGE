@@ -23,9 +23,24 @@ export class BlogDetailComponent implements OnInit {
   view(post:any){
     this.global.previewPost=post;
     this.global.previewOps=post.body;
-    this.global.previewPost.body=JSON.parse(this.global.previewPost.body);
-    // console.log("body of opst"+JSON.parse(this.global.previewOps));
+    // this.global.previewPost.body=JSON.parse(this.global.previewPost.body);
     console.log(this.global.previewPost.body);
+    let size = this.global.previewPost.body.ops.length;
+    for (let i =0;i <size;i++ ){
+      if(this.global.previewPost.body.ops[i].attributes){
+        if (this.global.previewPost.body.ops[i].attributes.align) {
+          this.global.previewPost.body.ops[i - 1].attributes = {
+            ...this.global.previewPost.body.ops[i - 1].attributes,
+            align: this.global.previewPost.body.ops[i].attributes.align
+          };
+          console.log("final: "+JSON.stringify(this.global.previewPost.body.ops[i - 1].attributes));
+        }
+        // if(this.global.previewPost.body.ops[i].attributes.align){
+        //   console.log("conseguido: "+this.global.previewPost.body.ops[i].attributes.align);
+          // this.global.previewPost.body.ops[i-1].attributes.push(this.global.previewPost.body.ops[i].attributes);
+          // this.global.previewPost.body.ops[i-1].attributes = Object.assign({}, this.global.previewPost.body.ops[i-1].attributes, this.global.previewPost.body.ops[i].attributes);
+        // }
+      }
+    }
   }
-
 }

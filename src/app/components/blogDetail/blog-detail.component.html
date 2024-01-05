@@ -1,7 +1,4 @@
 <main>
- 
-
-    <!-- blog-details-area-start -->
     <section class="blog-area blog-details pt-150 pb-85">
         <div class="container">
             <div class="row">
@@ -9,244 +6,41 @@
                     <div class="blog-strandard-content">
                         <div class="kblog mb-35">
                             <div class="kblog__img mb-35">
-                                <img class="img-fluid" src="{{global.previewPost.img}}" alt="" style="max-width: 50%;">
+                                <!-- <img class="img-fluid" src="{{global.previewPost.img}}" alt="" style="max-width: 50%;"> -->
                             </div>
                             <div class="kblog__content">
                                 <div class="bl-meta mb-10">
                                     <ul>
-                                        <li><span><i class="fal fa-user-circle"></i>Por <span>{{global.previewPost.author}}</span></span>
+                                        <li><span><i class="fal fa-user-circle"></i>Por
+                                                <span>{{global.previewPost.author}}</span></span>
                                         </li>
-                                        <li><span><i class="fal fa-calendar-alt"></i>{{global.previewPost.createdAt|date}}</span></li>
+                                        <li><span><i
+                                                    class="fal fa-calendar-alt"></i>{{global.previewPost.createdAt|date}}</span>
+                                        </li>
                                     </ul>
                                 </div>
-                                <a >
+                                <a>
                                     <h4>{{global.previewPost.title}}</h4>
                                 </a>
-                                <div *ngFor="let item of global.previewPost.body.ops">
-                                    <ng-container *ngIf="isString(item.insert)">
-                                      <!-- Si el insert es un string, renderizarlo directamente -->
-                                      <span [innerHTML]="item.insert"></span>
+                                <div *ngFor="let item of global.previewPost.body.ops" class="row">
+                                    <ng-container *ngIf="item.insert && isString(item.insert)" >
+                                        <span [ngStyle]="{
+                                            'color': item.attributes?.color, 
+                                            'text-align': item.attributes?.align,
+                                            'font-weight': item.attributes?.bold ? 'bold' : 'normal',
+                                            'font-style': item.attributes?.italic ? 'italic' : 'normal',
+                                            'text-decoration': item.attributes?.underline ? 'underline' : 'none'
+                                        }" >{{item.insert}}</span>
                                     </ng-container>
-                                    <ng-container *ngIf="!isString(item.insert)">
-                                      <!-- Si el insert es un objeto, en este caso, un objeto con una propiedad image -->
-                                      <img *ngIf="item.insert.image" [src]="item.insert.image" alt="Embedded Image">
+                                    <ng-container *ngIf="item.insert && !isString(item.insert)">
+                                        <img *ngIf="item.insert.image" [src]="item.insert.image" alt="Embedded Image">
                                     </ng-container>
-                                  </div>
-                                  
-
-                                <!-- <p class="pt-25 pb-15 pfont">{{global.previewPost.body}}</p> -->
-                            </div>
-                        </div>
-                        <!-- <div class="kblog mb-35">
-                            <div class="kblog__img mb-35">
-                                <div class="row gx-xxl-3">
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                                        <img class="img-fluid img-pad" src="assets/multi/img/blog/b-21.jpg" alt="">
-                                    </div>
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
-                                        <img class="img-fluid" src="assets/multi/img/blog/b-22.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="kblog__content">
-                                <p class="mb-50 pfont">Quis autem vel eum iure reprehenderit qui in ea voluptate
-                                    velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat
-                                    quo voluptas must explain to you how all this mistaken idea of denouncing
-                                    pleasure and praising pain was born and I will give you a complete account of
-                                    the system, and expound the actual teachings of the great explorer of the truth,
-                                    the master-builder of human happiness. No one rejects, dislikes, or avoids
-                                    pleasure itself, because it is pleasure, but because those who do not know how
-                                    to pursue pleasure rationally encounter consequences that are extremely painful.
-                                    Nor again is there anyone who loves or pursues or desires to obtain pain of
-                                    itself, because it is pain</p>
-                            </div>
-                        </div> -->
-                        <!-- <div class="quote-wrapper quote-wrapper-02 mb-40">
-                            <div class="quote-text">
-                                <h4>Smashing Podcast Episode With Stéphanie Walter How Can Work With UI Frameworks
-                                </h4>
-                                <h5><i class="fal fa-quote-left"></i>Norman S. Roberts</h5>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-xxl-end">
-                            <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-7 col-xs-12">
-                                <div class="blog-post-tag">
-                                    <span>Tags : </span>
-                                    <a >Business Cart</a>
-                                    <a >Design</a>
-                                    <a >Branding</a>
-                                </div>
-                            </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-4 col-md-5 col-xs-12">
-                                <div class="blog-share-icon text-end">
-                                    <span>Share :</span>
-                                    <a ><i class="fab fa-facebook-f"></i></a>
-                                    <a ><i class="fab fa-twitter"></i></a>
-                                    <a ><i class="fab fa-instagram"></i></a>
-                                    <a ><i class="fab fa-google"></i></a>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="author d-flex grey-bg mt-60 mb-60">
-                            <div class="author-img mr-35">
-                                <img src="assets/multi/img/blog/b-23.png" alt="">
-                            </div>
-                            <div class="author-text">
-                                <h3>Eugene A. Pearson</h3>
-                                <p>But must explain to you how all this mistake idea deounciasure and praising pain
-                                    was born and will give you comete account the system </p>
-                                <div class="author-icon">
-                                    <a ><i class="fab fa-facebook-f"></i></a>
-                                    <a ><i class="fab fa-twitter"></i></a>
-                                    <a ><i class="fab fa-instagram"></i></a>
-                                    <a ><i class="fab fa-google"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row justify-content-between">
-                            <div class="col-xxl-5- col-xl-5 col-lg-12 col-md-12">
-                                <div class="bakix-navigation text-left">
-                                    <img src="assets/multi/img/blog/b-24.jpg" alt="">
-                                    <div class="bakix-text">
-                                        <h4><a >Mixing Tangible Intan
-                                                Interfaces Using</a></h4>
-                                        <ul>
-                                            <li><i class="fal fa-user"></i>Somlia</li>
-                                            <li><i class="fal fa-calendar-alt"></i>05 Aug 2020</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xxl-5 col-xl-5 col-lg-12 col-md-12">
-                                <div class="bakix-navigation">
-                                    <img src="assets/multi/img/blog/b-25.jpg" alt="">
-                                    <h4><a >Mixing Tangible Intan
-                                            Interfaces Adobe</a></h4>
-                                    <ul>
-                                        <li><i class="fal fa-user"></i>Somlia</li>
-                                        <li><i class="fal fa-calendar-alt"></i>05 Aug 2020</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="bakix-border mt-55"></div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="post-comments pt-60">
-                            <div class="blog-coment-title mb-40">
-                                <h4>People’s Comments</h4>
-                            </div>
-                            <div class="latest-comments">
-                                <ul>
-                                    <li>
-                                        <div class="comments-box d-flex mb-50">
-                                            <div class="comments-avatar mr-25">
-                                                <img src="assets/multi/img/blog/b-26.jpg" alt="">
-                                            </div>
-                                            <div class="comments-text">
-                                                <div class="avatar-name">
-                                                    <h5>David Angel Makel</h5>
-                                                    <span>IT Consultant</span>
-                                                </div>
-                                                <p>It is a long established fact that a reader will be distracted Por
-                                                    the readable content page looking at its layout point of using
-                                                    autem vel eum iure reprehenderit qui in ea voluptate</p>
-                                                <a >Reply Comments <i
-                                                        class="fal fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="children ml-105">
-                                        <div class="comments-box d-flex mb-50">
-                                            <div class="comments-avatar mr-25">
-                                                <img src="assets/multi/img/blog/b-27.jpg" alt="">
-                                            </div>
-                                            <div class="comments-text">
-                                                <div class="avatar-name">
-                                                    <h5>Michel Rason Roy</h5>
-                                                    <span>Product Designer</span>
-                                                </div>
-                                                <p>Established fact that a reader will be distracted by the readable
-                                                    content page looking at its layout point of using autem vel eum
-                                                    iure reprehenderit voluptate</p>
-                                                <a >Reply Comments <i
-                                                        class="fal fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="comments-box d-flex mb-50">
-                                            <div class="comments-avatar mr-25">
-                                                <img src="assets/multi/img/blog/b-28.jpg" alt="">
-                                            </div>
-                                            <div class="comments-text">
-                                                <div class="avatar-name">
-                                                    <h5>David Angel Makel</h5>
-                                                    <span>IT Consultant</span>
-                                                </div>
-                                                <p>Established fact that a reader will be distracted by the readable
-                                                    content page looking at its layout point of using autem vel eum
-                                                    iure reprehenderit voluptate</p>
-                                                <a >Reply Comments <i
-                                                        class="fal fa-long-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="bakix-border"></div>
-                            </div>
-                        </div>
-
-                        <div class="post-comment-form mt-60">
-                            <div class="blog-coment-title mb-40">
-                                <h4>Reply Comments</h4>
-                            </div>
-                            <div class="contact-form post-comment-box">
-                                <form action="blog-details.html#">
-                                    <div class="row">
-                                        <div class="col-xl-6 pos-rel">
-                                            <input class="contact__input" type="text" placeholder="Full Name Here">
-                                            <i class="far fa-user"></i>
-                                        </div>
-                                        <div class="col-xl-6 pos-rel">
-                                            <input class="contact__input" type="email" placeholder="Email Here">
-                                            <i class="far fa-envelope-open"></i>
-                                        </div>
-                                        <div class="col-12 pos-rel">
-                                            <textarea class="contact__input contact__input-messege" name="message"
-                                                placeholder="Comments"></textarea>
-                                            <i class="far fa-pencil"></i>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="subs-btn subs-btn-2 f-btn mb-35">
-                                                <a class="theme_btn theme_btn_bg" >send message
-                                                    <i class="fas fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
-
-
                     </div>
                 </div>
-
                 <div class="col-xxl-4 col-xl-4 col-lg-4">
-                                    
-
                     <div class="widget widget-02 mb-40">
                         <div class="widget-title-box mb-20">
                             <h3 class="widget-title">Publicaciones recientes</h3>
@@ -257,19 +51,15 @@
                                     <img src="{{post.img}}" alt="" style="max-width: 150px;">
                                 </div>
                                 <div class="widget-post-body">
-                                    <h6 class="widget-post-title"><a > {{post.title}}</a></h6>
+                                    <h6 class="widget-post-title"><a> {{post.title}}</a></h6>
                                     <div class="widget-post-meta"><i class="far fa-angle-right"></i>Por {{post.autor}}
                                     </div>
                                 </div>
                             </li>
-                         
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
- 
-
 </main>
