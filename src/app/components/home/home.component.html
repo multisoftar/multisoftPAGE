@@ -390,7 +390,7 @@
     </section>
     <!--testimonial-area end-->
 
-    <!-- <section class="blog-area grey-bg pt-130 pb-85">
+     <section class="blog-area grey-bg pt-130 pb-85">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 wow fadeInUp2" data-wow-delay='.2s'>
@@ -401,76 +401,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6" *ngFor="let post of global.posts" (click)="view(post)" style="cursor: pointer;">
                     <div class="kblog mb-35">
                         <div class="kblog__img mb-25">
-                            <img class="img-fluid" src="assets/multi/img/blog/b-01.jpg" alt="">
+                            <img class="img-fluid" src="{{post.img}}" alt="">
                         </div>
                         <div class="kblog__content">
                             <div class="bl-meta mb-10">
                                 <ul>
-                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
+                                    <li><span><i class="fal fa-user-circle"></i>Por <span>{{post.autor}}</span></span>
+                                    </li>
+                                    <li><span><i class="fal fa-user-circle"></i>Fecha <span>{{post.createdAt | date}}</span></span>
                                     </li>
                                 </ul>
                             </div>
-                            <a href="#">
-                                <h4>Designing Ethically Optimizing Videos
-                                    Shining Spotlight Smashing</h4>
+                            <a>
+                                <h4 class="k-blog-title"> <a >{{post.title}}</a></h4>                           
                             </a>
-                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
-                                accusantium doloremque laudantium</p>
-                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
-                                <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                    <div class="kblog mb-35">
-                        <div class="kblog__img mb-25">
-                            <img class="img-fluid" src="assets/multi/img/blog/b-02.jpg" alt="">
-                        </div>
-                        <div class="kblog__content">
-                            <div class="bl-meta mb-10">
-                                <ul>
-                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#">
-                                <h4>Improving Your Team’s Communication In The Age Of Remote Work</h4>
-                            </a>
-                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
-                                accusantium doloremque laudantium</p>
-                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
-                                <i class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                    <div class="kblog mb-35">
-                        <div class="kblog__img mb-25">
-                            <img class="img-fluid" src="assets/multi/img/blog/b-03.jpg" alt="">
-                        </div>
-                        <div class="kblog__content">
-                            <div class="bl-meta mb-10">
-                                <ul>
-                                    <li><span><i class="fal fa-user-circle"></i>By <span>David Max</span></span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#">
-                                <h4>Designing Better Tooltips For Mobile User Interfaces</h4>
-                            </a>
-                            <p class="pt-10">Sed ut perspiciatis unde omnis natus error luptatem
-                                accusantium doloremque laudantium</p>
-                            <a href="#" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
+                                <p class="pt-10">{{post.description}}</p>
+                            <a (click)="viewPost(post)" class="theme_btn theme_btn_bg theme-border-btn mt-20">Leer articulo
                                 <i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
 </main>
 <!--footer-area start-->

@@ -7,6 +7,7 @@ import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
 import { setTheme } from 'ngx-bootstrap/utils';
 import { ChangeDetectorRef } from '@angular/core';
+import { GlobalService } from '@app/services/global.service';
 
 @Component({
   selector: 'app-home',
@@ -120,7 +121,8 @@ export class HomeComponent implements AfterViewInit {
     public script:ScriptService,
     public yeoman:Yeoman,
     public dataApiService: DataApiService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    public global: GlobalService
 
     ) {
       
@@ -240,6 +242,25 @@ export class HomeComponent implements AfterViewInit {
       this.dataApiService.getAllIntegration().subscribe(response=>{
         this.yeoman.allintegration=response;
       });
+    }
+    viewPost(post:any){
+      this.global.previewPost=post;
+      this.global.previewOps=post.body;
+      // console.log(this.global.previewPost.body);
+      let size = this.global.previewPost.body.ops.length;
+      for (let i =0;i <size;i++ ){
+        if(this.global.previewPost.body.ops[i].attributes){
+          if (this.global.previewPost.body.ops[i].attributes.align) {
+            this.global.previewPost.body.ops[i - 1].attributes = {
+              ...this.global.previewPost.body.ops[i - 1].attributes,
+              align: this.global.previewPost.body.ops[i].attributes.align
+            };
+            // console.log("final: "+JSON.stringify(this.global.previewPost.body.ops[i - 1].attributes));
+          }
+       
+        }
+      }
+      this.router.navigate(['blogDetail']);
     }
 
      ngAfterViewInit(): void {

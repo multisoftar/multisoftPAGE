@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from '@app/services/global.service';
 import { Yeoman } from '@app/services/yeoman.service';
@@ -8,7 +8,7 @@ import { Yeoman } from '@app/services/yeoman.service';
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.css']
 })
-export class BlogDetailComponent implements OnInit {
+export class BlogDetailComponent implements AfterViewInit {
 
   constructor(
     public  global:GlobalService,
@@ -18,8 +18,7 @@ export class BlogDetailComponent implements OnInit {
   isString(value: any): boolean {
     return typeof value === 'string';
   }
-  ngOnInit(): void {
-  }
+  
   view(post:any){
     this.global.previewPost=post;
     this.global.previewOps=post.body;
@@ -42,5 +41,9 @@ export class BlogDetailComponent implements OnInit {
         // }
       }
     }
+  }
+
+  ngAfterViewInit(): void {
+    window.scrollTo(0, 0);
   }
 }
