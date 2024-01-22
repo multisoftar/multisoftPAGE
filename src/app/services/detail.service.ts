@@ -10,7 +10,7 @@ export class Detail {
     description: '',
     moduless: ''
   };
-  
+  images: string[] = [];
 
   constructor() {}
 }
