@@ -31,8 +31,6 @@ export class IndustriesComponent implements OnInit ,AfterViewInit{
 
   ngAfterViewInit(): void {
 
-    // console.log("lo que viene: ",this.filter.idCategorySelected)
-    //  this.global.loadModules();
   }
   ngOnInit(): void {
     window.scrollTo(0, 0);

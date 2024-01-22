@@ -1,10 +1,12 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { Router} from '@angular/router';
 import { SwiperOptions } from 'swiper';
 import { ScriptService } from '@app/services/script.service';
 import { Yeoman } from '@app/services/yeoman.service';
 import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
+import { setTheme } from 'ngx-bootstrap/utils';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +23,6 @@ export class HomeComponent implements AfterViewInit {
     description: 'Descripción inicial',
     moduless: 'Módulos iniciales'
   };
- 
   config1: SwiperOptions = {
     a11y: { enabled: true },
     direction: 'horizontal',
@@ -40,29 +41,10 @@ export class HomeComponent implements AfterViewInit {
       disableOnInteraction: false, 
     },
   };
-  config: SwiperOptions = {
+ 
+  configClient: SwiperOptions = {
     a11y: { enabled: true },
     direction: 'horizontal',
-    slidesPerView: 1,
-    keyboard: true,
-    mousewheel: false,
-    scrollbar: false,
-    pagination: true,
-    spaceBetween: 5,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    breakpoints: {
-           768: {
-        slidesPerView: 2
-      }
-    }
-  };
-  config2: SwiperOptions = {
-    a11y: { enabled: true },
-    direction: 'horizontal',
-    slidesPerView: 2,
     keyboard: true,
     mousewheel: false,
     scrollbar: false,
@@ -73,16 +55,22 @@ export class HomeComponent implements AfterViewInit {
       prevEl: '.swiper-button-prev'
     },
     autoplay: {
-      delay: 800, 
+      delay: 600, 
       disableOnInteraction: false, 
     },
+    // Configuración específica para escritorio
     breakpoints: {
+      1200: {
+        slidesPerView: 6,
+      },
+      // Configuración específica para vista móvil
       768: {
-        slidesPerView: 5
+        slidesPerView: 2,
       }
     }
   };
-  config3: SwiperOptions = {
+  
+  configIntegrations: SwiperOptions = {
     a11y: { enabled: true },
     direction: 'horizontal',
     slidesPerView: 2,
@@ -105,7 +93,25 @@ export class HomeComponent implements AfterViewInit {
       }
     }
   };
-  
+  configTestimonial: SwiperOptions = {
+    a11y: { enabled: true },
+    direction: 'horizontal',
+    slidesPerView: 1,
+    keyboard: true,
+    mousewheel: false,
+    scrollbar: false,
+    pagination: true,
+    spaceBetween: 5,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+           768: {
+        slidesPerView: 2
+      }
+    }
+  };
   
 
   constructor(
@@ -113,40 +119,45 @@ export class HomeComponent implements AfterViewInit {
     public router:Router,
     public script:ScriptService,
     public yeoman:Yeoman,
-    public dataApiService: DataApiService
+    public dataApiService: DataApiService,
+    private cdr: ChangeDetectorRef
 
     ) {
-      // this.products=allProducts
-      // this.clients=allclient
-      // this.rubros=allrubro
+      
       this.script.load(
-        'modernizr',
         'jquery',
-        'bootstrap-bundle',
-        'owl-carousel',
+        'bootstrap',
+        'owlCarousel',
         'isotope',
         'slick',
-        'magnific-popup',
+        'magnificPopup',
         'meanmenu',
         'metisMenu',
-        'nice-select',
-        'ajax-form',
+        'niceSelect',
+        'ajaxForm',
         'wow',
         'counterup',
         'waypoints',
         'scrollUp',
         'imageslo',
-        'magnific-popup',
+        'magnificPopup2',
         'easypiechart',
         'tilt',
+        'plugins',
         'main'
-      );
+                  )
+           
+    .then(data => {})
+    .catch(error => console.log(error));
     this.getAll();
     this.loadCategories();
     this.getAllProducts();
     this.getAlltest();
     this.getAllRubro();
     this.getAllIntegration();
+    this.yeoman.allclient=[];
+    this.yeoman.allintegration=[];
+    this.yeoman.alltestimony=[];
      }
      
     
@@ -233,6 +244,15 @@ export class HomeComponent implements AfterViewInit {
 
      ngAfterViewInit(): void {
       window.scrollTo(0, 0);
+      // Restablecer la configuración del carrusel al volver a la vista
+      this.yeoman.configClient = { ...this.yeoman.configOptions, slidesPerView: 6, pagination: true, autoplay: { delay: 700 }, spaceBetween: 5 };
+      // Forzar la detección de cambios
+      this.cdr.detectChanges();
+
+      }
+    ngOnInit(): void {
+      window.scrollTo(0, 0);
+      console.log('allclient:', this.yeoman.allclient);
     }
   
 

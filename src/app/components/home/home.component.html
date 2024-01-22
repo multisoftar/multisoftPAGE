@@ -29,8 +29,9 @@
     <!--sliders clients start-->
     <section class="brand-area grey-bg pt-100 pb-85" >
         <div class="container">
+              
             <div class="row brand-active" >
-                <swiper [config]="config2">
+               <swiper [config]="configClient">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide col-xl-2" *ngFor="let client of yeoman.allclient;let i = index">
                             <div class="slide_img">
@@ -38,6 +39,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </swiper>               
             </div>
         </div>
@@ -329,7 +331,7 @@
                 </div>
             </div>
             <div class="row brand-active" >
-                <swiper [config]="config3">
+                <swiper [config]="configIntegrations">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide col-xl-2" *ngFor="let integration of yeoman.allintegration;let i = index">
                             <div class="slide_img">
@@ -360,7 +362,7 @@
                     <div class="row testimonial-active-05">
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
-                        <swiper [config]="config">
+                        <swiper [config]="configTestimonial">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide col-xxl-4 col-md-10 testimonial-item" *ngFor="let testimony of yeoman.alltestimony;let i = index">
                                     <div class="text_inner text_inner_02 pos-rel white-bg">

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { ScriptService } from '@app/services/script.service';
 import { setTheme } from 'ngx-bootstrap/utils';
 import { Router} from '@angular/router';
@@ -7,12 +7,15 @@ import { DataApiService } from '@app/services/data-api.service';
 import { Detail } from '@services/detail.service';
 import { GlobalService } from './services/global.service';
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit{
   title = 'multisoft';
   allProducts:any;
   categories:any;
@@ -21,6 +24,7 @@ export class AppComponent {
     description: 'Descripción inicial',
     moduless: 'Módulos iniciales'
   };
+  
   constructor(
     public script: ScriptService,
     public infoDetail: Detail,
@@ -53,11 +57,8 @@ export class AppComponent {
       'plugins',
       'main'
                 )
-          .then(data => {
-            // this.yeoman.isLoaded=true;
-          })
-          .catch(error => console.log(error)); 
-    setTheme('bs5');
+                .then(data => {})
+                .catch(error => console.log(error));
   }
   setCategory(i:any){
     let indice= i;
@@ -89,5 +90,7 @@ export class AppComponent {
     this.router.navigate(['industries']);
   }
   
- ngAfterViewInit(): void {}
+ ngAfterViewInit(): void {
+ 
+ }
 }

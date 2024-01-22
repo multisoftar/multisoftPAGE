@@ -59,10 +59,11 @@ setPreview(i: any) {
   console.log("id enviado: ", this.filter.idCategorySelected)
     this.router.navigate(['industries']);
 }
-  
+ngAfterViewInit(): void {
+  window.scrollTo(0, 0);
+}
   ngOnInit(): void {
     
-    console.log("lo que viene: ",JSON.stringify(this.localDetail.info))
     window.scrollTo(0, 0);
   }
 }

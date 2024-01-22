@@ -1,15 +1,35 @@
 import { Injectable } from '@angular/core';
 import { DataApiService } from '@services/data-api.service';
 import { Filter } from '@services/filters.service';
-
+import { SwiperOptions } from 'swiper';
 @Injectable({
   providedIn: 'root'
 })
 
 export class Yeoman {
-  categorySelected:any={"id":""};
-  
-filtered=false;
+  loaded: any = false;
+  previewnew:any={};
+  configOptions: SwiperOptions = {
+    a11y: { enabled: true },
+    direction: 'horizontal',
+    keyboard: true,
+    mousewheel: false,
+    scrollbar: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  };
+
+  configClient: SwiperOptions = {
+    ...this.configOptions,
+    slidesPerView: 6,
+    pagination: true,
+    autoplay: { delay: 700 },
+    spaceBetween: 5
+  };
+ 
+  filtered=false;
   view:string='grid';
   preview:any={};
   user:any;
@@ -32,8 +52,9 @@ filtered=false;
   allcategory:any=[];
   integration:any={};
   allintegration:any=[];
-  clients:any={};
-  client:any={};
+  /* clients: any = []; */
+  clients:any=[]; 
+  client:any=[];
   allclient:any=[];
   testimony:any=[];
   alltestimony:any=[];
